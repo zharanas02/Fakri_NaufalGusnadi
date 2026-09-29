@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fakri Naufal Gusnadi — Electrical Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= DECK UI ================= -->
+<div class="progress-bar"><div class="progress-fill"></div></div>
+
+<div class="slide-counter">
+  <span class="current">01</span>
+  <span class="divider">/</span>
+  <span class="total">07</span>
+</div>
+
+<nav class="nav-dots" aria-label="Navigasi slide">
+  <button class="nav-dot active" data-slide="0" aria-label="Slide 1"></button>
+  <button class="nav-dot" data-slide="1" aria-label="Slide 2"></button>
+  <button class="nav-dot" data-slide="2" aria-label="Slide 3"></button>
+  <button class="nav-dot" data-slide="3" aria-label="Slide 4"></button>
+  <button class="nav-dot" data-slide="4" aria-label="Slide 5"></button>
+  <button class="nav-dot" data-slide="5" aria-label="Slide 6"></button>
+  <button class="nav-dot" data-slide="6" aria-label="Slide 7"></button>
+</nav>
+
+<div class="nav-hint">
+  <kbd>←</kbd><kbd>→</kbd> navigasi · <kbd>Space</kbd> lanjut · <kbd>Home</kbd>/<kbd>End</kbd> lompat
+</div>
+
+<!-- ================= DECK WRAPPER ================= -->
+<div class="deck" id="deck">
+  <div class="deck-inner" id="deck-inner">
+
+<!-- =================== SLIDE 1 — COVER =================== -->
+<section class="slide cover">
+  <canvas id="circuit-canvas"></canvas>
+  <div class="cover-glow"></div>
+
+  <div class="cover-content">
+    <div class="cover-top">
+      <div class="logo-chip">
+        <span>FNG</span>
+      </div>
+      <div class="cover-status">
+        <span class="dot"></span> Available for opportunities
+      </div>
+    </div>
+
+    <div class="cover-main">
+      <div class="cover-left">
+        <h1 class="cover-name">
+          Fakri<br/>
+          <span class="grad-text">Naufal</span><br/>
+          Gusnadi
+        </h1>
+        <p class="cover-role">Electrical Engineer</p>
+        <div class="cover-tags">
+          <span>Power Systems</span>
+          <span>Embedded Systems</span>
+          <span>IoT</span>
+          <span>Renewable Energy</span>
+        </div>
+      </div>
+
+      <div class="cover-right">
+        <svg viewBox="0 0 500 500" class="hero-svg">
+          <defs>
+            <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00E5FF"/>
+              <stop offset="1" stop-color="#007BFF"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <g stroke="url(#heroGrad)" stroke-width="1.5" fill="none" opacity="0.6">
+            <path d="M50 100 H200 V250 H450"/>
+            <path d="M50 250 H150 V400 H450"/>
+            <path d="M100 50 V180 H300 V450"/>
+            <path d="M400 50 V300 H250 V450"/>
+          </g>
+
+          <g filter="url(#glow)">
+            <circle cx="200" cy="100" r="5" fill="#FFB703"/>
+            <circle cx="150" cy="250" r="5" fill="#FFB703"/>
+            <circle cx="300" cy="180" r="5" fill="#00E5FF"/>
+            <circle cx="450" cy="250" r="5" fill="#00E5FF"/>
+            <circle cx="400" cy="50" r="5" fill="#FFB703"/>
+            <circle cx="300" cy="450" r="5" fill="#00E5FF"/>
+          </g>
+
+          <g transform="translate(180, 180)">
+            <rect width="140" height="140" rx="12" fill="#0B1F3A" stroke="url(#heroGrad)" stroke-width="2"/>
+            <rect x="10" y="10" width="120" height="120" rx="6" fill="none" stroke="url(#heroGrad)" stroke-width="0.5" opacity="0.5"/>
+            <text x="70" y="80" text-anchor="middle" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-size="32" font-weight="700">μC</text>
+            <text x="70" y="105" text-anchor="middle" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">STM32</text>
+          </g>
+
+          <g stroke="#00E5FF" stroke-width="1.5">
+            <line x1="180" y1="200" x2="140" y2="200"/>
+            <line x1="180" y1="240" x2="140" y2="240"/>
+            <line x1="180" y1="280" x2="140" y2="280"/>
+            <line x1="320" y1="200" x2="360" y2="200"/>
+            <line x1="320" y1="240" x2="360" y2="240"/>
+            <line x1="320" y1="280" x2="360" y2="280"/>
+            <line x1="230" y1="180" x2="230" y2="140"/>
+            <line x1="270" y1="180" x2="270" y2="140"/>
+            <line x1="230" y1="320" x2="230" y2="360"/>
+            <line x1="270" y1="320" x2="270" y2="360"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-contact">
+        <span>Padang, Indonesia</span>
+        <span class="sep"></span>
+        <span>fakrinaufalgusnadi5@gmail.com</span>
+        <span class="sep"></span>
+        <span>linkedin.com/in/fakrinaufalgusnadi</span>
+      </div>
+      <div class="cover-year">Portfolio · 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 2 — PROFIL =================== -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="hdr-name">Fakri Naufal Gusnadi</span>
+    <span class="hdr-page">02 / 07</span>
+  </header>
+
+  <h2 class="slide-title">Profil &amp; Pendidikan</h2>
+
+  <div class="grid-profile">
+    <div class="profile-photo-wrap">
+      <div class="photo-frame">
+        <img src="assets/foto.jpg" alt="Foto" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"/>
+        <div class="photo-fallback">FNG</div>
+      </div>
+      <div class="profile-quote">
+        <p>"Merancang sistem kelistrikan yang andal—dari sel baterai hingga grid."</p>
+      </div>
+    </div>
+
+    <div class="profile-content">
+      <p class="lede">
+        Lulusan <strong>Teknik Elektro Universitas Andalas</strong> dengan fokus pada
+        sistem tenaga listrik, embedded system, dan IoT. Aktif dalam riset dan proyek
+        nyata mulai dari <em>Battery Management System</em>, propulsi elektrik kapal,
+        sistem ATS data center, hingga program pemberdayaan masyarakat pascabencana.
+      </p>
+
+      <div class="edu-card">
+        <div class="edu-head">
+          <div>
+            <h3>Universitas Andalas</h3>
+            <p>S1 Teknik Elektro · 2022 – 2026</p>
+          </div>
+          <div class="ipk-badge">
+            <span class="ipk-value" data-count="3.56">0.00</span>
+            <span class="ipk-label">IPK / 4.00</span>
+          </div>
+        </div>
+
+        <div class="ta-highlight">
+          <div class="ta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="7" width="18" height="10" rx="2"/>
+              <path d="M7 12h3l2-3 2 6 2-3h3"/>
+            </svg>
+          </div>
+          <div class="ta-body">
+            <span class="ta-tag">Tugas Akhir</span>
+            <p>Penerapan Estimasi State of Charge Baterai LiFePO4 menggunakan Hybrid OCV-Coulomb Counting pada BMS Kendaraan Listrik berbasis STM32-Nucleo.</p>
+          </div>
+        </div>
+
+        <div class="skill-bars">
+          <div class="skill">
+            <div class="skill-head"><span>Power Systems</span><span>90%</span></div>
+            <div class="bar"><div class="fill" data-fill="90"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span>Embedded & IoT</span><span>88%</span></div>
+            <div class="bar"><div class="fill" data-fill="88"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span>Renewable Energy</span><span>82%</span></div>
+            <div class="bar"><div class="fill" data-fill="82"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span>Automation & SCADA</span><span>85%</span></div>
+            <div class="bar"><div class="fill" data-fill="85"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 3 — PROYEK 1 =================== -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="hdr-name">Fakri Naufal Gusnadi</span>
+    <span class="hdr-page">03 / 07</span>
+  </header>
+
+  <h2 class="slide-title">Proyek Unggulan <span class="muted">/ 01</span></h2>
+
+  <div class="cards-3">
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">01</span>
+        <span class="pcard-role">Ketua Tim</span>
+      </div>
+      <h3>Sistem ATS Data Center</h3>
+      <p class="pcard-org">PT Carano Teknologi × PT Salingka Telekomunikasi</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <defs>
+            <linearGradient id="atsGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#00E5FF"/>
+              <stop offset="1" stop-color="#007BFF"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="15" width="45" height="26" rx="4" fill="none" stroke="url(#atsGrad)" stroke-width="1.5"/>
+          <text x="32" y="32" text-anchor="middle" font-size="8" fill="#1E293B" font-family="JetBrains Mono, monospace">PLN</text>
+          <rect x="10" y="57" width="45" height="26" rx="4" fill="none" stroke="url(#atsGrad)" stroke-width="1.5"/>
+          <text x="32" y="74" text-anchor="middle" font-size="8" fill="#1E293B" font-family="JetBrains Mono, monospace">GENSET</text>
+          <rect x="10" y="99" width="45" height="26" rx="4" fill="none" stroke="url(#atsGrad)" stroke-width="1.5"/>
+          <text x="32" y="116" text-anchor="middle" font-size="8" fill="#1E293B" font-family="JetBrains Mono, monospace">PV</text>
+          <path d="M55 28 H100 V70 H140" stroke="#00E5FF" stroke-width="1.5" fill="none"/>
+          <path d="M55 70 H140" stroke="#00E5FF" stroke-width="1.5" fill="none"/>
+          <path d="M55 112 H100 V70" stroke="#00E5FF" stroke-width="1.5" fill="none"/>
+          <rect x="140" y="50" width="45" height="40" rx="6" fill="#0B1F3A" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="162" y="74" text-anchor="middle" font-size="10" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-weight="700">ATS</text>
+          <path d="M185 70 H220" stroke="#FFB703" stroke-width="2" fill="none"/>
+          <rect x="220" y="55" width="30" height="30" rx="4" fill="none" stroke="#FFB703" stroke-width="1.5"/>
+          <text x="235" y="74" text-anchor="middle" font-size="7" fill="#1E293B" font-family="JetBrains Mono, monospace">DC</text>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Integrasi grid PLN, genset, dan panel surya untuk menjaga keandalan listrik data center.</p>
+
+      <div class="chip-row">
+        <span class="chip">ATS</span>
+        <span class="chip">Hybrid Power</span>
+      </div>
+    </article>
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">02</span>
+        <span class="pcard-role">Tim Desain</span>
+      </div>
+      <h3>BMS Kendaraan Listrik</h3>
+      <p class="pcard-org">Tim Desain Teknik Elektro UNAND</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <g>
+            <rect x="15" y="50" width="70" height="40" rx="6" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+            <line x1="85" y1="60" x2="95" y2="60" stroke="#00E5FF" stroke-width="1.5"/>
+            <line x1="85" y1="80" x2="95" y2="80" stroke="#00E5FF" stroke-width="1.5"/>
+            <text x="50" y="74" text-anchor="middle" font-size="8" fill="#1E293B" font-family="JetBrains Mono, monospace">LiFePO4</text>
+            <line x1="32" y1="50" x2="32" y2="90" stroke="#00E5FF" stroke-width="0.5" opacity="0.5"/>
+            <line x1="49" y1="50" x2="49" y2="90" stroke="#00E5FF" stroke-width="0.5" opacity="0.5"/>
+            <line x1="66" y1="50" x2="66" y2="90" stroke="#00E5FF" stroke-width="0.5" opacity="0.5"/>
+          </g>
+          <rect x="100" y="45" width="60" height="50" rx="6" fill="#0B1F3A" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="130" y="72" text-anchor="middle" font-size="9" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-weight="700">STM32</text>
+          <text x="130" y="85" text-anchor="middle" font-size="6" fill="#64748B" font-family="JetBrains Mono, monospace">SOC est.</text>
+          <circle cx="210" cy="70" r="28" fill="none" stroke="#E2E8F0" stroke-width="6"/>
+          <circle cx="210" cy="70" r="28" fill="none" stroke="#FFB703" stroke-width="6"
+                  stroke-dasharray="132" stroke-dashoffset="33" stroke-linecap="round"
+                  transform="rotate(-90 210 70)"/>
+          <text x="210" y="74" text-anchor="middle" font-size="12" fill="#0B1F3A" font-family="JetBrains Mono, monospace" font-weight="700">75%</text>
+          <line x1="160" y1="70" x2="182" y2="70" stroke="#00E5FF" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Estimasi kondisi baterai, proteksi sel, dan monitoring performa real-time.</p>
+
+      <div class="chip-row">
+        <span class="chip">BMS</span>
+        <span class="chip">STM32</span>
+        <span class="chip">SOC</span>
+      </div>
+    </article>
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">03</span>
+        <span class="pcard-role">Divisi Elektrikal</span>
+      </div>
+      <h3>ESC Kapal Elektrik</h3>
+      <p class="pcard-org">ANRD — Kontes Kapal Indonesia</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <rect x="10" y="55" width="40" height="30" rx="5" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="30" y="74" text-anchor="middle" font-size="7" fill="#1E293B" font-family="JetBrains Mono, monospace">BATT</text>
+          <rect x="80" y="45" width="60" height="50" rx="6" fill="#0B1F3A" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="110" y="70" text-anchor="middle" font-size="11" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-weight="700">ESC</text>
+          <text x="110" y="84" text-anchor="middle" font-size="6" fill="#64748B" font-family="JetBrains Mono, monospace">3-phase</text>
+          <circle cx="185" cy="70" r="22" fill="none" stroke="#FFB703" stroke-width="2"/>
+          <text x="185" y="74" text-anchor="middle" font-size="9" fill="#1E293B" font-family="JetBrains Mono, monospace" font-weight="700">M</text>
+          <g transform="translate(230, 70)">
+            <ellipse cx="0" cy="-12" rx="4" ry="14" fill="#FFB703" opacity="0.7"/>
+            <ellipse cx="0" cy="12" rx="4" ry="14" fill="#FFB703" opacity="0.7"/>
+            <circle cx="0" cy="0" r="3" fill="#0B1F3A"/>
+          </g>
+          <line x1="50" y1="70" x2="80" y2="70" stroke="#00E5FF" stroke-width="1.5"/>
+          <line x1="140" y1="70" x2="163" y2="70" stroke="#00E5FF" stroke-width="1.5"/>
+          <line x1="207" y1="70" x2="220" y2="70" stroke="#FFB703" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Pemilihan komponen, wiring kelistrikan, dan integrasi electronic speed controller.</p>
+
+      <div class="chip-row">
+        <span class="chip">ESC</span>
+        <span class="chip">Propulsion</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =================== SLIDE 4 — PROYEK 2 =================== -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="hdr-name">Fakri Naufal Gusnadi</span>
+    <span class="hdr-page">04 / 07</span>
+  </header>
+
+  <h2 class="slide-title">Proyek Unggulan <span class="muted">/ 02</span></h2>
+
+  <div class="cards-3">
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">04</span>
+        <span class="pcard-role">PMB 2026</span>
+      </div>
+      <h3>Pemberdayaan Masyarakat</h3>
+      <p class="pcard-org">Program Mahasiswa Berdampak</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <circle cx="30" cy="30" r="12" fill="#FFB703" opacity="0.9"/>
+          <g stroke="#FFB703" stroke-width="1.5" opacity="0.6">
+            <line x1="30" y1="10" x2="30" y2="4"/>
+            <line x1="30" y1="50" x2="30" y2="56"/>
+            <line x1="10" y1="30" x2="4" y2="30"/>
+            <line x1="50" y1="30" x2="56" y2="30"/>
+          </g>
+          <rect x="60" y="20" width="55" height="35" rx="3" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+          <line x1="60" y1="30" x2="115" y2="30" stroke="#00E5FF" stroke-width="0.5"/>
+          <line x1="60" y1="42" x2="115" y2="42" stroke="#00E5FF" stroke-width="0.5"/>
+          <line x1="80" y1="20" x2="80" y2="55" stroke="#00E5FF" stroke-width="0.5"/>
+          <line x1="98" y1="20" x2="98" y2="55" stroke="#00E5FF" stroke-width="0.5"/>
+          <rect x="145" y="25" width="40" height="30" rx="4" fill="#0B1F3A" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="165" y="44" text-anchor="middle" font-size="8" fill="#00E5FF" font-family="JetBrains Mono, monospace">INV</text>
+          <path d="M205 55 L225 40 L245 55 V85 H205 Z" fill="none" stroke="#FFB703" stroke-width="1.5"/>
+          <rect x="218" y="65" width="10" height="12" fill="#FFB703" opacity="0.4"/>
+          <g transform="translate(70, 95)">
+            <rect x="0" y="0" width="30" height="30" rx="4" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+            <text x="15" y="20" text-anchor="middle" font-size="7" fill="#1E293B" font-family="JetBrains Mono, monospace">H₂O</text>
+            <path d="M15 30 V40" stroke="#00E5FF" stroke-width="1.5"/>
+            <path d="M5 40 H25" stroke="#00E5FF" stroke-width="1.5"/>
+          </g>
+          <path d="M115 37 H145" stroke="#FFB703" stroke-width="1.5" fill="none"/>
+          <path d="M185 40 H205" stroke="#FFB703" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Instalasi PV Power Station, filter air bersih, dan edukasi kelistrikan untuk warga terdampak bencana.</p>
+
+      <div class="chip-row">
+        <span class="chip">PV Station</span>
+        <span class="chip">Water Filter</span>
+        <span class="chip">Juara 2 Poster</span>
+      </div>
+    </article>
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">05</span>
+        <span class="pcard-role">Studi Independen</span>
+      </div>
+      <h3>Load Flow Muko-Muko</h3>
+      <p class="pcard-org">ETAP Simulation · 2024</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <line x1="30" y1="30" x2="230" y2="30" stroke="#0B1F3A" stroke-width="3"/>
+          <line x1="30" y1="110" x2="230" y2="110" stroke="#0B1F3A" stroke-width="3"/>
+          <circle cx="50" cy="20" r="8" fill="none" stroke="#FFB703" stroke-width="1.5"/>
+          <text x="50" y="23" text-anchor="middle" font-size="8" font-family="JetBrains Mono, monospace" fill="#FFB703">G</text>
+          <line x1="50" y1="28" x2="50" y2="30" stroke="#FFB703" stroke-width="1.5"/>
+          <g stroke="#00E5FF" stroke-width="1.5" fill="none">
+            <path d="M90 30 V50 L85 55 L95 60 L85 65 L90 70 V110"/>
+            <path d="M140 30 V50 L135 55 L145 60 L135 65 L140 70 V110"/>
+            <path d="M190 30 V50 L185 55 L195 60 L185 65 L190 70 V110"/>
+          </g>
+          <text x="90" y="90" text-anchor="middle" font-size="7" font-family="JetBrains Mono, monospace" fill="#64748B">Bus 2</text>
+          <text x="140" y="90" text-anchor="middle" font-size="7" font-family="JetBrains Mono, monospace" fill="#64748B">Bus 3</text>
+          <text x="190" y="90" text-anchor="middle" font-size="7" font-family="JetBrains Mono, monospace" fill="#64748B">Bus 4</text>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Analisis aliran daya menggunakan ETAP berdasarkan single line diagram jaringan distribusi Muko-Muko.</p>
+
+      <div class="chip-row">
+        <span class="chip">ETAP</span>
+        <span class="chip">Load Flow</span>
+      </div>
+    </article>
+
+    <article class="pcard">
+      <div class="pcard-head">
+        <span class="pcard-num">06</span>
+        <span class="pcard-role">Tugas Besar</span>
+      </div>
+      <h3>Filter Air Otomatis</h3>
+      <p class="pcard-org">Teknik Elektro · 2024</p>
+
+      <div class="pcard-diagram">
+        <svg viewBox="0 0 260 140">
+          <circle cx="40" cy="70" r="15" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="40" y="74" text-anchor="middle" font-size="8" fill="#1E293B" font-family="JetBrains Mono, monospace">S</text>
+          <rect x="90" y="50" width="70" height="40" rx="6" fill="#0B1F3A" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="125" y="74" text-anchor="middle" font-size="9" fill="#00E5FF" font-family="JetBrains Mono, monospace" font-weight="700">CTRL</text>
+          <g transform="translate(200, 70)">
+            <path d="M-15 -10 L0 0 L-15 10 Z" fill="none" stroke="#FFB703" stroke-width="1.5"/>
+            <path d="M15 -10 L0 0 L15 10 Z" fill="none" stroke="#FFB703" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="3" fill="#FFB703"/>
+          </g>
+          <circle cx="125" cy="115" r="14" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+          <text x="125" y="119" text-anchor="middle" font-size="9" fill="#1E293B" font-family="JetBrains Mono, monospace">P</text>
+          <line x1="55" y1="70" x2="90" y2="70" stroke="#00E5FF" stroke-width="1.5"/>
+          <line x1="160" y1="70" x2="185" y2="70" stroke="#FFB703" stroke-width="1.5"/>
+          <line x1="125" y1="90" x2="125" y2="101" stroke="#00E5FF" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <p class="pcard-desc">Prototipe sistem filter air otomatis dengan sensor dan kontrol untuk irigasi serta pemupukan skala kecil.</p>
+
+      <div class="chip-row">
+        <span class="chip">Sensor</span>
+        <span class="chip">Automation</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =================== SLIDE 5 — PENGALAMAN =================== -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="hdr-name">Fakri Naufal Gusnadi</span>
+    <span class="hdr-page">05 / 07</span>
+  </header>
+
+  <h2 class="slide-title">Pengalaman &amp; Organisasi</h2>
+
+  <div class="grid-2">
+    <div>
+      <h3 class="section-label">Pengalaman Kerja</h3>
+      <ul class="timeline-list">
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Magang SCADA &amp; Telekomunikasi</strong>
+            <span>UP2D Sumbar — PT PLN</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Asisten Lab &amp; Koordinator R&amp;D</strong>
+            <span>Lab Sistem Tenaga UNAND</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Asisten Riset Dosen</strong>
+            <span>Departemen Teknik Elektro UNAND</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Asisten Praktikum</strong>
+            <span>Lab Dasar Teknik Elektro UNAND</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="section-label">Organisasi &amp; Kepanitiaan</h3>
+      <ul class="timeline-list">
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Koordinator R&amp;D</strong>
+            <span>Lab Sistem Tenaga UNAND</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Anggota Electrical Division</strong>
+            <span>ANRD</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Koordinator KOBAR</strong>
+            <span>Forum Kajian Islam Rabbani</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Koordinator Biro Kesekretariatan</strong>
+            <span>Foristek UNAND</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Ketua Pelaksana</strong>
+            <span>Sekolah Kobar 2024</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <strong>Koordinator Acara</strong>
+            <span>Mubes HMTE FT UNAND</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 6 — PRESTASI =================== -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="hdr-name">Fakri Naufal Gusnadi</span>
+    <span class="hdr-page">06 / 07</span>
+  </header>
+
+  <h2 class="slide-title">Prestasi &amp; Sertifikasi</h2>
+
+  <div class="grid-2">
+    <div>
+      <h3 class="section-label">Prestasi</h3>
+      <ul class="award-list">
+        <li><span class="medal gold"></span>Bintang Aktivis Kampus — UNAND <em>2026</em></li>
+        <li><span class="medal gold"></span>Wisudawan Terbaik Prodi — UNAND <em>2026</em></li>
+        <li><span class="medal silver"></span>Juara 2 Poster Terbaik — PMB <em>2026</em></li>
+        <li><span class="medal blue"></span>Finalis KKI Kategori ERC <em>2024, 2025</em></li>
+        <li><span class="medal gold"></span>Best Prototipe Kategori ASV — KKI <em>2024</em></li>
+        <li><span class="medal gold"></span>Best Poster Kategori ASV — KKI <em>2025</em></li>
+        <li class="highlight"><span class="medal amber"></span>Beasiswa Cendekia BAZNAS <em>2024–2026</em></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="section-label">Sertifikasi &amp; Pelatihan</h3>
+      <ul class="award-list">
+        <li><span class="medal blue"></span>Ahli Madya PLTGU — ESDM RI <em>2026</em></li>
+        <li><span class="medal blue"></span>Sertifikasi ETAP — CV Naiq Derajat <em>2026</em></li>
+        <li><span class="medal blue"></span>Sertifikasi K3 Laboratorium <em>2025</em></li>
+        <li><span class="medal blue"></span>Pelatihan DlgSILENT PowerFactory <em>2025</em></li>
+        <li><span class="medal blue"></span>Pelatihan PLC <em>2025–2026</em></li>
+        <li><span class="medal blue"></span>Pelatihan ETAP <em>2024</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 7 — KONTAK =================== -->
+<section class="slide contact-slide">
+  <canvas id="contact-canvas"></canvas>
+  <div class="contact-inner">
+    <div class="contact-badge">Get in Touch</div>
+    <h2 class="contact-title">Terima Kasih</h2>
+    <p class="cta">Terbuka untuk peluang kerja, kolaborasi riset, dan diskusi lebih lanjut.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:fakrinaufalgusnadi5@gmail.com">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </div>
+        <div class="cc-text">
+          <span class="label">Email</span>
+          <span>fakrinaufalgusnadi5@gmail.com</span>
+        </div>
+      </a>
+
+      <a class="contact-card" href="tel:+6282283785593">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div class="cc-text">
+          <span class="label">Telepon</span>
+          <span>0822-8378-5593</span>
+        </div>
+      </a>
+
+      <a class="contact-card" href="https://linkedin.com/in/fakrinaufalgusnadi" target="_blank" rel="noopener">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45z"/>
+          </svg>
+        </div>
+        <div class="cc-text">
+          <span class="label">LinkedIn</span>
+          <span>fakrinaufalgusnadi</span>
+        </div>
+      </a>
+
+      <div class="contact-card static">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="cc-text">
+          <span class="label">Lokasi</span>
+          <span>Padang, Sumatera Barat</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <span>© 2026 Fakri Naufal Gusnadi</span>
+      <span>Portfolio v2.0</span>
+    </div>
+  </div>
+</section>
+
+  </div><!-- /.deck-inner -->
+</div><!-- /.deck -->
+
+<script src="script.js"></script>
+</body>
+</html>
